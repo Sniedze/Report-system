@@ -20,12 +20,12 @@ def login(request):
             context = {
                 'error': 'Wrong username or password.'
             }
-    return render(request, 'login.html', context)
+    return render(request, 'accounts_app/login.html', context)
 
 
 def logout(request):
     dj_logout(request)
-    return render(request, 'login.html')
+    return render(request, 'accounts_app/login.html')
 
 
 def request_password_reset(request):
@@ -54,7 +54,7 @@ def request_password_reset(request):
             })
             return HttpResponseRedirect(reverse('accounts_app:password_reset'))
 
-    return render(request, 'request_password_reset.html')
+    return render(request, 'accounts_app/request_password_reset.html')
 
 
 def password_reset(request):
@@ -70,13 +70,13 @@ def password_reset(request):
                 prr.save()
             except:
                 print("Invalid password reset attempt.")
-                return render(request, 'password_reset.html')
+                return render(request, 'accounts_app/password_reset.html')
 
             user = prr.user
             user.set_password(password)
             user.save()
             return HttpResponseRedirect(reverse('accounts_app:login'))
 
-    return render(request, 'password_reset.html')
+    return render(request, 'accounts_app/password_reset.html')
 
 

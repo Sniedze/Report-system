@@ -8,5 +8,9 @@ from django.urls import reverse
 @login_required
 def index(request):
 
-    return render(request, 'todo_app/index.html')
+    context = {
+        'todos': 'todos',
+        'user': request.user
+    }
+    return render(request, 'report_app/index.html', context)
 
