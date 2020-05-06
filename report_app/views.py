@@ -9,7 +9,6 @@ from django.urls import reverse
 def index(request):
 
     context = {
-        'todos': 'todos',
         'user': request.user
     }
     return render(request, 'report_app/index.html', context)

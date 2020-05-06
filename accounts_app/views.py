@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as dj_login, logout as dj_logout
 from django.http import HttpResponseRedirect
 from .models import PasswordResetRequest
-from django.contrib.auth.decorators import login_required
 import django_rq
 from .messaging import email_message
 
