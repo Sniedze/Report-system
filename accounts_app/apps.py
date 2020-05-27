@@ -5,5 +5,5 @@ class AccountsAppConfig(AppConfig):
     name = 'accounts_app'
 
     def ready(self):
-        from .signals import create_user_profile
+        import accounts_app.signals
 

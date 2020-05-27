@@ -1,15 +1,32 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-<h1>Index page</h1>
+    {% block content %}
+     <div class="reports">
+         <a href={{ create_link }} class="navlink">HOME</a>
 
-</body>
-</html>
+         {{ create_link }}
+        <h1>Reports</h1>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Status</th>
+            </tr>
+            {% for report in reports %}
+            <tr>
+                <td class="book-cell">{{ report.id }}</td>
+                <td class="book-cell">{{ report.title }}</td>
+                <td class="book-cell">{{ report.description }}</td>
+                <td class="book-cell">{{ report.category }}</td>
+                <td class="book-cell">{{ report.status }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% load static %}
+
+<script src="{% static 'js/scripts.js' %}"></script>
+
+    {% endblock %}

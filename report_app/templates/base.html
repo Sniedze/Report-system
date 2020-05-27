@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen"/>
+
+    <title>Validation Reports</title>
+</head>
+<body>
+<nav class="navbar">
+    <ul>
+        <a href="{% url 'report_app:index' %}" class="navlink">HOME</a>
+        <a href="{% url 'accounts_app:login' %}" class="navlink">LOGIN</a>
+        <a href="{% url 'accounts_app:logout' %}" class="navlink">LOG OUT</a>
+
+    </ul>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>

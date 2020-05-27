@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import UserProfile
-from .models import PasswordResetRequest
+from .models import Profile, PasswordResetRequest
 
-admin.site.register(UserProfile)
+admin.site.register(Profile)
 admin.site.register(PasswordResetRequest)
