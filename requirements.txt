@@ -8,7 +8,7 @@ djangorestframework==3.11.0
 djangorestframework-simplejwt==4.4.0
 EditorConfig==0.12.2
 jsbeautifier==1.11.0
-PyJWT==1.7.1
+PyJWT==2.4.0
 pytz==2019.3
 redis==3.4.1
 rq==1.3.0
